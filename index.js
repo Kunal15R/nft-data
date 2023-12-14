@@ -13,8 +13,10 @@ app.use(bodyParser.json());
 app.get("/sol", async (req, res) => {
   const { address } = req.query;
   try {
+    console.log(address);
     // random number between 1 to 4
     const random = Math.floor(Math.random() * 4) + 1;
+    console.log(random);
     const request = await axios.post(
       "https://rest-api.hellomoon.io/v0/nft/magiceden/wallet-all-time-stats",
       {
