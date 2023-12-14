@@ -10,6 +10,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello world");
+})
+
 app.get("/sol", async (req, res) => {
   const { address } = req.query;
   try {
